@@ -1,3 +1,5 @@
+import{cart}from'../data/cart.js';
+
 
 let productsHTML = '';
 
@@ -47,7 +49,7 @@ products.forEach((product) => {
         Added
       </div>
 
-      <button class="add-to-cart-button" button-primary js-add-to-cart" data-product-id = "${product.id}">
+      <button class="add-to-cart-button button-primary js-add-to-cart" data-product-id = "${product.id}">
         Add to Cart
       </button>
     </div>
@@ -89,8 +91,15 @@ if(matchingItem){
 });
 }
 
+let cartQuantity=0;
 
-  
-console.log(cart);
+cart.forEach((item)=>{
+ cartQuantity += item.quantity;
 });
+  
+document.querySelector('.js-cart-quantity').innerHTML = cartQuantity;
+
+console.log(cartQuantity);
+console.log(cart);
+ });
 });
