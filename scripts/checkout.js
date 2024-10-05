@@ -1,4 +1,4 @@
-import{cart}from'../data/cart.js';
+import{cart, removeFromCart}from'../data/cart.js';
 import{products}from '../data/products.js';
 import { FormatCurrency } from './utils/money.js';
 
@@ -27,10 +27,10 @@ products.forEach((product) => {
                 src=" ${matchingProduct.image}">
               <div class="cart-item-details">
                 <div class="product-name">
-                ${matchingPorduct.name}
+                ${matchingProduct.name}
                 </div>
                 <div class="product-price">
-                  ${matchingProduct.priceCents /100}
+                  $${matchingProduct.priceCents /100}
                 </div>
                 <div class="product-quantity">
                   <span>
@@ -39,7 +39,7 @@ products.forEach((product) => {
                   <span class="update-quantity-link link-primary">
                     Update
                   </span>
-                  <span class="delete-quantity-link link-primary">
+                  <span class="delete-quantity-link   link-primary js-delete-link" data-product-id=${matchingProduct.id}>
                     Delete
                   </span>
                 </div>
@@ -92,7 +92,14 @@ products.forEach((product) => {
             </div>
 `;
 });
-document.querySelector('.js-oreder-summary')
-.innerHTML= cartSummaryHTML;
+document.querySelectorAll('.js-oreder-summary')
+.innerHTML =cartSummaryHTML;
 
 
+document.querySelectorAll('.js-delete-link')
+        .forEach((link) => {
+            link.addEventListener('click', () =>{
+             const productId=link.dataset.productId;
+           
+            });
+        });
