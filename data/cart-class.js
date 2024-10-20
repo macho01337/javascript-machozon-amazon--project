@@ -83,7 +83,7 @@ removeFromCart(productId){
 const cart = new Cart('cart-oop');
 const BusniessCart = new Cart('cart-busniess');
 
-cart.#localStorageKey = 'test';
+
 
 
 console.log(cart);
