@@ -5,6 +5,24 @@ import {loadCart} from '../data/cart.js';
 //import '../data/cart-class.js';
 //import '../data/backend.js';
 
+async function loadPage(){
+
+
+ await loadproductsFetch();
+
+ const value = await new Promise((resolve)=> {
+  loadCart(() => {
+   resolve();
+  });
+});
+
+renderOrderSummary();
+renderPaymentSummary();
+
+
+}
+loadPage();
+
 
 Promise.all([
   loadproductsFetch(),

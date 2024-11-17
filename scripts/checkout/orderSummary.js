@@ -6,13 +6,6 @@ import {deliveryOptions, getDeliveryOption} from '../../data/deliveryOptions.js'
 import {loadproducts, loadproductsFetch} from '../../data/products.js';
 
 
-beforeAll((done) => {
-  loadproductsFetch().then(()=>{
-      done();
-  });
-   (() => {   
-});
-});
 
 
 export function renderOrderSummary() {
