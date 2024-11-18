@@ -21,7 +21,7 @@ async function loadPage(){
 }); 
 
  } catch (error) {
-  console.error('Error loading products:', error);
+  
   
  }
  
